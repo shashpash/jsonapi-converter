@@ -606,7 +606,8 @@ public class ResourceConverter {
 		String id = idNode != null ? idNode.asText().trim() : "";
 
 		if (id.isEmpty() && deserializationFeatures.contains(DeserializationFeature.REQUIRE_RESOURCE_ID)) {
-			throw new IllegalArgumentException(String.format("Resource must have a non null and non-empty 'id' attribute! %s", object.toString()));
+			id = -1;
+//			throw new IllegalArgumentException(String.format("Resource must have a non null and non-empty 'id' attribute! %s", object.toString()));
 		}
 
 		String type = object.get(TYPE).asText();
